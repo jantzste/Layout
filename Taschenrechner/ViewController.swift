@@ -20,47 +20,9 @@ class ViewController: UIViewController {
         
         setNaviBar()
         
-        numberInput()
-        
-        addCalculationButtons()
-        
-        firstIconButton()
-        
     }
     
     
-    func addCalculationButtons(){
-        
-        //add the finalResultButton
-        let finalResultBtn = FinalResultButton()
-        let finalResulatCalculation = finalResultBtn.finalResultButton()
-        self.view.addSubview(finalResulatCalculation)
-        
-        
-        //add the pulsButton
-        let plusBtn = PlusButton()
-        let plusCalculation = plusBtn.plusButton()
-        self.view.addSubview(plusCalculation)
-        
-        //add the minusButton
-        let minusBtn = MinusButton()
-        let minusCalculation = minusBtn.minusButton()
-        self.view.addSubview(minusCalculation)
-        
-        
-        //add the divideButton
-        let divideBtn = DivideButton()
-        let divideCalculation = divideBtn.divideButton()
-        self.view.addSubview(divideCalculation)
-        
-        
-        //add the multiplicationButton
-        let multiplicationBtn = MultiplicationButton()
-        let multiplicationCalculation = multiplicationBtn.multiplicationButton()
-        self.view.addSubview(multiplicationCalculation)
-        
-        
-    }
     
     
     func setNaviBar(){
@@ -100,50 +62,7 @@ class ViewController: UIViewController {
         
     }
     
-    
-   //add the iconButton
-    func firstIconButton () -> UIButton{
-        
-        
-        let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 480, width: 80, height: 50))
-        btn.backgroundColor = UIColor.blue
-        btn.setTitle("Test", for: UIControlState.normal)
-        btn.layer.cornerRadius = 5
-        btn.addTarget(self, action: #selector(iconButtonAction), for: .touchUpInside)
-        btn.tag = 1
-        
-        self.view.addSubview(btn)
 
-        return btn
-    }
-    
-    //show iconMenu
-    let iconLauncher = IconLauncher()
-
-    func iconButtonAction(sender: UIButton!){
-        iconLauncher.showSettings()
-
-    }
-    
-    
-    
-    func numberInput(){
-        
-        let background = UIView(frame: CGRect(x: 0, y: 10, width: 420, height: 80))
-        background.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        self.view.addSubview(background)
-        
-        let numberInput = UILabel(frame: CGRect(x: 15, y: 10, width: 385, height: 60))
-        numberInput.text = "test"
-        numberInput.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-        numberInput.font = UIFont.italicSystemFont(ofSize: 60)
-        
-        background.addSubview(numberInput)
-        
-        
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
